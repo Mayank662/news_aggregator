@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div.news_list {
+        text-align: center;
+    }
+    ul.myUL {
+        display: inline-block;
+        text-align: left;
+    }
+    div.logout {
+        position: absolute;
+        top:10px;
+        right:10px;
+    }
+</style>
+<body>
+    <h1><b>Hello, {{user_data.first_name}}</b></h1>
+    
+    <div class = "news_list">
+        <h2><b>Today's Top pickup</b></h2>
+        <ul class="myUL">
+        {% for each_news in news_data %}
+        <li><a href = {{each_news.link}}>{{each_news.title}}</a></li><br>
+        {% endfor %}
+        </ul>
+    </div>
+
+    <div class="logout">
+        <a href="/logout">Logout</a>
+    </div>
+
+</body>
+</html>
